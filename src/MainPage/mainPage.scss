@@ -1,0 +1,134 @@
+.main-page_container {
+  height: 100%;
+  width: 100%;
+  background-image: url('https://nezalezhnist.8.co.ua/img/slide-1.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  justify-content: center;
+  // padding-left: 65%; 
+  // overflow: scroll;
+  @media (max-width: 768px) {
+    padding: 20px; // Скидаємо великий padding-left для мобільних
+    align-items: center; // Вирівнюємо елементи по горизонталі
+    justify-content: space-between; // Рівномірне розміщення елементів по вертикалі
+  }
+
+  & button {
+    width: 300px;
+    background-color: #c56d03;
+    // margin-top: 50px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    transition: background-color 1s ease;
+
+    &:hover {
+      background-color: #0b6d30; // Вже змінений колір для наведення
+      border: 1px solid #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      width: 50%;
+      // margin: auto;
+      // margin-top: calc((100vh - 400px)/4);
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: row;
+  align-items: center;
+
+    img {
+      max-height: 100px;
+      min-height: 20px;
+      height: auto;
+      display: block;
+      margin-right: 30px;
+      @media (max-width: 768px) {
+        margin: auto;    
+        margin-right: 10px;
+        height: 70px;
+
+      }
+    }
+  }
+
+  &__together {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+
+    &__title {
+      max-width: 350px;
+      margin-top: 20vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+
+      h1 {
+        color: #ffffff;
+        font-size: 84px;
+        text-shadow: 0 0 1px #ffffff, 0 0 5px #ffffff, 0 0 12px #c56d03, 0 0 40px #c56d03;
+
+        @media (max-width: 768px) {
+          font-size: 64px;
+          text-align: center;
+          margin-top: 60px;
+
+        }
+      }
+
+      h3 {
+        font-size: 28px;
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+        color: #ffffff;
+        position: relative;
+        padding: 10px; // це додатковий відступ навколо тексту для підкладки
+        @media (max-width: 768px) {
+          font-size: 20px;
+          & .h3-overlay {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(255, 255, 255, 0.4); 
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    padding-left: 5%;
+    justify-content: center;
+
+    &__logo {
+      justify-content: center;
+
+      img {
+        width: 60%;
+        margin: 20px;
+      }
+    }
+
+    &__together {
+      align-items: center;
+
+      &__title {
+        h1, h3 {
+          text-align: center;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+

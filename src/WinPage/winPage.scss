@@ -1,0 +1,99 @@
+.win-page_container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://nezalezhnist.8.co.ua/img/slide-7.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Центруємо елементи по горизонталі
+  justify-content: center; // Центруємо елементи по вертикалі
+
+  &__papirus {
+    position: relative; // Встановлюємо позицію відносно для дочірніх елементів з абсолютним позиціонуванням
+    min-width: 60%;
+    max-width: 1000px;
+    max-height: 800px;
+    margin: auto;
+    opacity: 0;
+    transition: opacity 2s;
+
+    &.visible {
+      opacity: 1;
+
+      @media (max-width: 786px) {
+        width: 90%;
+        height: 80vh;
+        min-width: 300px;
+        margin: auto;
+      }
+
+    }
+
+    & img {
+      display: block; // Забезпечує правильне позиціонування зображення
+      max-width: 100%; // Забезпечує, що зображення не буде виходити за межі контейнера
+
+      @media (max-width: 768px) {
+        // Для мобільних екранів
+        height: 80vh; // Встановлює висоту як 80% від висоти екрану
+        width: auto; // Автоматичний розмір ширини для збереження пропорцій зображення
+      }
+    }
+
+    &__text {
+      position: absolute;
+      top: 10%; // Відступи можна налаштувати відповідно до вашого зображення
+      left: 10%;
+      right: 10%; // Забезпечуємо відступи з обох боків
+      bottom: 10%;
+      font-size: 20px; // Розмір шрифту можна налаштувати відповідно до вашого зображення
+      line-height: 20px; // Розмір шрифту можна налаштувати відповідно до вашого зображення
+      overflow-y: auto; // У випадку перевищення розміру тексту додаємо прокрутку
+      padding: 10px; // Додаємо відступи для тексту
+      text-align: left; // Вирівнюємо текст по ширині
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+
+      /* Для ефекту машинного друку */
+      @media (max-width:768px) {
+        font-size: 18px;
+        line-height: 18px;
+        top: 5%;
+        left: 5%;
+        right: 5%;
+        bottom: 5%;
+      }
+    }
+  }
+
+  & button{
+    position: absolute;
+    bottom: 50px;
+    right: calc(50% - 80px);
+    background-color: rgb(21, 66, 171, 0.8);
+    border-radius: 25px;
+    border: none;
+    padding: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    color: rgba(250, 245, 245, 0.89);
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateX(10px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      bottom: 46px;
+      // right: 20px;
+      font-size: 18px;
+      line-height: 18px;
+left: 24%;
+    }
+
+  }
+}

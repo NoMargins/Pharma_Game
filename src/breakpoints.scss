@@ -1,0 +1,17 @@
+@mixin desktop-screen {
+	@media screen and (min-width: $large-screen) {
+		@content;
+	}
+}
+
+@mixin tablet-screen {
+	@media screen and (max-width: calc($large-screen - 1px)) and (min-width: $medium-screen) {
+		@content;
+	}
+}
+
+@mixin mobile-screen {
+	@media screen and (max-width: $small-screen) {
+		@content;
+	}
+}

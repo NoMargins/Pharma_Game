@@ -1,0 +1,62 @@
+.completion-popup {
+    position: absolute;
+    background-image: url('https://nezalezhnist.8.co.ua/img/papirus.png');
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; 
+    padding: 40px;
+    border-radius: 10px;
+    z-index: 1001;
+
+    
+    &__text {
+      padding: 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+  
+    
+}
+// Медіазапит для мобільних екранів
+@media (max-width: 768px) {
+    .completion-popup {
+        width: 90%; 
+        padding: 15px;
+
+        &__text {
+            padding: 15px;
+            font-size: 18px;
+        }
+  
+        // & button {
+        //     right: 15px;
+        //     width: 40px;
+        //     height: 40px;
+        //     font-size: 14px;
+        //     line-height: 14px;
+        //     bottom: -4px;
+        // }
+    }
+}
+
+.completion-popup__arrow {
+  width: 100px;
+  background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(49, 47, 47, 0.89);
+    transition: 0.3s;
+	background-color: rgb(205, 205, 42);
+	border-radius: 25px;
+  @media (max-width: 768px) {
+    right: 15px;
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 14px;
+            bottom: -4px;
+  }
+}

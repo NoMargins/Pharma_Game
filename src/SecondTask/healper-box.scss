@@ -1,0 +1,139 @@
+.receipt_papirus {
+  position: absolute;
+  background-image: url('https://nezalezhnist.8.co.ua/img/papirus.png');
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  z-index: 1001;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column; // Щоб контент та кнопка відповідно відображалися
+
+  &.unvisible {
+      display: none;
+  }
+
+  &__text {
+    flex: 1;
+    overflow-y: auto;  // Включити прокрутку по вертикалі
+    padding: 40px;
+    width: 100%;
+    margin: 20px;
+    max-height: calc(100% - 60px);  // Обмеження висоти. 60px
+
+      h2.recipe-title {
+          font-size: 32px;
+          margin-bottom: 16px;
+          text-align: center;
+          text-transform: uppercase;
+          margin-top: 10px;
+      }
+
+      p {
+          margin-bottom: 20px;
+          font-size: 24px;
+          line-height: 22px;
+
+          &.recipe-intro {
+              // font-weight: bold;
+              font-size: 24px;
+          line-height: 22px;
+          @media (max-width: 768px) {
+            font-size: 18px;
+            line-height: 18px;
+          }
+          }
+
+          &.recipe-outro {
+              font-style: italic;
+              font-size: 24px;
+          line-height: 22px;
+          @media (max-width: 768px) {
+            font-size: 18px;
+            line-height: 18px;
+
+          }
+          }
+      }
+
+      ul.recipe-ingredients {
+          margin-bottom: 20px;
+          margin-right: 16px;
+          // list-style: none;
+
+          li {
+              margin-bottom: 10px;
+              font-size: 24px;
+          line-height: 22px;
+
+          & img {
+            width: 100px;
+            margin: 10px 20px;
+          }
+        }
+      }
+  }
+
+  &__close-btn {
+    position: absolute; // Щоб вказати координати кнопки відносно блоку
+    top: 20px;  // Відступ від верхнього краю
+    right: 20px;  // Відступ від правого краю
+    background-color: rgb(222, 202, 46);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+
+      &:hover {
+          background-color: darkred;
+      }
+  }
+
+  // Мобільна адаптація
+  @media (max-width: 768px) {
+      width: 95%;
+      max-width: 95%;
+      padding: 10px;
+      
+      &__text {
+          padding: 10px;
+
+          h2.recipe-title {
+              font-size: 20px;
+          }
+
+          p {
+              margin-bottom: 15px;
+              font-size: 18px;
+              line-height: 18px;
+
+          }
+
+          ul.recipe-ingredients {
+              margin-bottom: 15px;
+
+              li {
+                  margin-bottom: 8px;
+                  font-size: 18px;
+                  line-height: 18px;
+
+              }
+          }
+      }
+
+      &__close-btn {
+          width: 25px;
+          height: 25px;
+          font-size: 14px;
+          right: 5px;
+      }
+  }
+}
