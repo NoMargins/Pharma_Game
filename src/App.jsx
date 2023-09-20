@@ -92,11 +92,9 @@ const App = () => {
             <Router>
                 <div className='first-ever-div'>
                     <Routes>
-                        {/* <Route path="/" element={<MainPage />} /> */}
+                        <Route path="/" element={<MainPage />} />
                         <Route path="/description" element={<DescPage />} />
-                        {/* <Route path="/auth" element={<AuthPage />} /> */}
-                         <Route path="/" element={<AuthPage />} />
-
+                        <Route path="/auth" element={<AuthPage />} />
                         <Route path="/firstTaskDesc" element={<FirstTaskDesk />} />
                         <Route path="/firstTask" element={<FirstTask />} />
                         <Route path="/secondTask" element={<SecondTask />} />
