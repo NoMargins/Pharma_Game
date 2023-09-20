@@ -16,7 +16,7 @@ const MainPage = () => {
       </div>
       <div className='main-page_container__together__title'>
         <h1>ФОРМУЛА ЗДОРОВ'Я</h1>
-        <h3>ВІТАЄМО У СВІТІ ОНЛАЙН-ГРИ!<div className="h3-overlay"></div></h3>
+        <div className="h3-overlay"><h3>ВІТАЄМО У СВІТІ ОНЛАЙН-ГРИ!</h3></div>
         </div>
         <button className='btn btn-primary main-page_container__together__button' onClick={onContinue}>РОЗПОЧАТИ!</button>
         </div>
