@@ -6,7 +6,7 @@ import './authPage.scss';
 
 const AuthPage = () => {
   const [username, setUsername] = useState('');
-  const [phone, setPhone] = useState('');
+  // const [phone, setPhone] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -16,11 +16,11 @@ const AuthPage = () => {
       return false;
     }
 
-    const numericPhone = phone.replace(/\D/g, ''); // Видаляємо всі нецифрові символи
-    if (isNaN(numericPhone) || numericPhone.length < 8) {
-      alert('Перевірте введений номер телефону');
-      return false;
-    }
+    // const numericPhone = phone.replace(/\D/g, ''); // Видаляємо всі нецифрові символи
+    // if (isNaN(numericPhone) || numericPhone.length < 8) {
+    //   alert('Перевірте введений номер телефону');
+    //   return false;
+    // }
 
     return true;
   };
@@ -30,18 +30,25 @@ const AuthPage = () => {
   
     if (!validateInputs()) return;
 
-    dispatch(setUserData(username, phone));
-    sendAuthToAPI(username, phone);
+    // dispatch(setUserData(username, phone));
+    // sendAuthToAPI(username, phone);
+    dispatch(setUserData(username));
+    sendAuthToAPI(username);
     navigate('../firstTaskDesc')
   };
 
-  const sendAuthToAPI = async (username, phone) => {
+  // const sendAuthToAPI = async (username, phone) => {
+  //   const dataToSend = {
+  //     username,
+  //     phone,
+  //     result: 'auth'
+  //   };
+  const sendAuthToAPI = async (username) => {
     const dataToSend = {
       username,
-      phone,
       result: 'auth'
     };
-  
+    
     try {
       const response = await fetch('https://team-911.com.ua/rx/data.php', {
         method: 'POST',
@@ -70,7 +77,7 @@ const AuthPage = () => {
         <div className='together'>
           <div className='auth-page_container__papirus__text'>
             <h3>Ласкаво просимо до таємничої лабораторії фарм-мольфарів! </h3>
-            <p>Щоб розпочати свою чарівну пригоду та отримати шанс виграти подарунки, будь ласка, заповніть цю картку:</p>
+            <p>Щоб розпочати свою чарівну пригоду, будь ласка, введіть своє ім'я:</p>
           </div>
           <div className='form-and-btn'>
           <form>
@@ -80,12 +87,12 @@ const AuthPage = () => {
                 type="text" 
                 className="form-control" 
                 id="username" 
-                placeholder="ПІБ" 
+                placeholder="" 
                 onChange={(e) => setUsername(e.target.value)} 
                 required 
               />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label htmlFor="phone">Номер телефону:</label>
               <input 
                 type="text" 
@@ -95,7 +102,7 @@ const AuthPage = () => {
                 onChange={(e) => setPhone(e.target.value)} 
                 required 
               />
-            </div>
+            </div> */}
           </form>
           <button className="auth-page_container__btn" onClick={(e) => handleLogin(e)}>
               Далі

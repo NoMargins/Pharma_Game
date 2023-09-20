@@ -40,7 +40,7 @@ useEffect(() => {
 
   const userData = useSelector(state => ({
     name: state.quiz.name,
-    phone: state.quiz.phone
+    // phone: state.quiz.phone
   }));
 
 

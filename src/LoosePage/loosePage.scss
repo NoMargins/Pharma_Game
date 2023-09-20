@@ -1,7 +1,6 @@
 .loose-page_container {
   height: 100vh;
   width: 100vw;
-  padding: 20px 100px 20px 20px;
   background-image: url('https://nezalezhnist.8.co.ua/img/slide-8.jpg');
   background-size: cover;
   display: flex;
@@ -11,9 +10,10 @@
 
   &__papirus {
     position: relative; // Встановлюємо позицію відносно для дочірніх елементів з абсолютним позиціонуванням
-    width: calc(100vw/2);
+    min-width: 60%;
+    max-width: 1000px;
+    max-height: 800px;
     margin: auto;
-
     opacity: 0;
     transition: opacity 2s;
 
@@ -56,25 +56,31 @@
 
       /* Для ефекту машинного друку */
       @media (max-width:768px) {
-        font-size: 16px;
-        line-height: 16px;
+        font-size: 18px;
+        line-height: 18px;
+        top: 5%;
+        left: 5%;
+        right: 5%;
+        bottom: 5%;
       }
     }
   }
 
-  & button {
+  & button{
     position: absolute;
-    bottom: 40px;
-    right: 300px;
-    background: none;
+    bottom: 50px;
+    right: calc(50% - 80px);
+    background-color: rgb(222, 202, 46);
+    border-radius: 25px;
     border: none;
-    font-size: 2em;
+    padding: 8px;
+    font-size: 18px;
     cursor: pointer;
-    color: rgb(122 116 116 / 89%);
+    color: rgba(251, 251, 251, 0.89);
     transition: 0.3s;
 
     &:hover {
-      transform: translateX(10px);
+      background-color: rgb(61, 222, 46);
     }
 
     &:focus {
@@ -82,10 +88,11 @@
     }
 
     @media (max-width: 768px) {
-      bottom: 40px;
-      right: 20px;
-      font-size: 1.5em;
-
+      bottom: 46px;
+      // right: 20px;
+      font-size: 18px;
+      line-height: 18px;
+left: 24%;
     }
 
   }

@@ -10,7 +10,7 @@
 
   &__papirus {
     position: relative; // Встановлюємо позицію відносно для дочірніх елементів з абсолютним позиціонуванням
-    min-width: 60%;
+    min-width: 300px;
     max-width: 1000px;
     max-height: 800px;
     margin: auto;
@@ -69,18 +69,21 @@
   & button{
     position: absolute;
     bottom: 50px;
-    right: calc(50% - 80px);
+    right: calc(50% - 100px);
     background-color: rgb(229, 219, 38);    
     border-radius: 25px;
     border: none;
     padding: 8px;
     font-size: 18px;
+    font-weight: 700;
+    min-width: 200px;
     cursor: pointer;
     color: rgba(52, 50, 50, 0.89);
     transition: 0.3s;
 
     &:hover {
-      transform: translateX(10px);
+      // transform: translateX(10px);
+      background-color: rgb(51, 229, 38);    
     }
 
     &:focus {
@@ -92,7 +95,7 @@
       // right: 20px;
       font-size: 18px;
       line-height: 18px;
-left: 24%;
+      left: calc(50% - 100px);
     }
 
   }

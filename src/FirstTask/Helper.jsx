@@ -7,7 +7,7 @@ const Healper = ({isPapirusVisible, closePapirus}) => {
         <div className='healper-box_papirus__text'>
           <img src='https://nezalezhnist.8.co.ua/img/question.png' alt='healper-img' />
           <p>
-          Натисніть на назву інгредієнта, контур його поля має змінитись на зелений.
+          Активуйте натиском назву інгредієнта, її тло має стати зеленим.
  </p>
  <p>Після цього натисніть на порожнє поле поруч із вибраним інгредієнтом.</p>
           <p>

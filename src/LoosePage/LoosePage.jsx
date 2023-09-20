@@ -61,16 +61,16 @@ const LoosePage = ({userName}) => {
   
   return (
     <div className="loose-page_container">
-      <div className={`win-page_container__papirus ${isPapirusVisible ? 'visible' : ''}`}>
+      <div className={`loose-page_container__papirus ${isPapirusVisible ? 'visible' : ''}`}>
         <img src='https://nezalezhnist.8.co.ua/img/papirus.png' alt="Papirus illustration"/>
-        <div className='win-page_container__papirus__text' id="typeEffect">
+        <div className='loose-page_container__papirus__text' id="typeEffect">
           {paragraphs.slice(0, currentParaIndex).map(para => (
             <p key={para}>{para}</p>
           ))}
           <p>{textToShow}</p>
         </div>
         {isArrowVisible && (
-      <button className="win-page_container__arrow" onClick={onContinue}>
+      <button className="loose-page_container__arrow" onClick={onContinue}>
         Спробувати ще раз!
       </button>
     )}

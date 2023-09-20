@@ -1,6 +1,7 @@
 .first-task_container {
   height: 100vh;
   width: 100vw;
+  min-width: 300px;
   position: relative;
   padding: 20px;
   background-image: url('https://nezalezhnist.8.co.ua/img/slide-5.png');
@@ -78,7 +79,8 @@
       text-align: center;
 
       &.matched {
-        color: #212020; // Якщо елементи збігаються, змінити колір тексту на чорний
+        color: #ffffff;
+        background-color: green; // Якщо елементи збігаються, змінити колір тексту на чорний
       }
 
       @media (max-width: 768px) {
@@ -183,8 +185,15 @@
 
     & img {
       width: 150px;
+      transition: 0.3s;
+      &:hover {
+        transform: scale(1.2);
+      }
        @media (max-width: 768px) {
         width: 100px;
+        &:hover {
+          transform: scale(1);
+        }
        }
     }
   }
@@ -233,21 +242,23 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(229, 219, 38);
     border: none;
     width: 30px;
     height: 30px;
+    padding: 5px;
+    text-align: center;
     cursor: pointer;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    color: black;
+    color: rgb(51, 50, 50);
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 1);
+     background-color: rgb(63, 229, 38);
     }
 
     &::before {
@@ -257,7 +268,8 @@
 }
 
 .title.selected {
-  border: 2px solid green;
+  background-color: green;
+  color: white;
 }
 
 .element_box.highlighted {
